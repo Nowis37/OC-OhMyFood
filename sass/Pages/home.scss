@@ -1,0 +1,292 @@
+/************************************
+        --- HEAD - 1ère partie -(au dessus des menus) ---              
+************************************/
+$primary-color: #9356DC;
+$secondary-color: #FF79DA;
+$thirty-color: #99E2D0;
+$grey-color: #f6f6f6;
+
+.head{  /* pas obligatoire */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Localisation: Paris, Belleville */
+
+.loc{
+    text-align: center;
+    background-color: #eaeaea;
+    width: auto;
+    height: 40px;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & p{
+        color: #353535;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    & .loc-icon{
+        margin-right: 11px;
+    }
+}
+
+/* Bloc title/subtitle/button */
+
+.reserve{
+    background-color: $grey-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: auto;
+    height: auto;
+    &__title{
+        font-weight: bold;
+        font-size: 22px;
+        margin-top: 35px;
+        margin-bottom: 12px;
+    }
+    &__desc{
+        font-size: 17px;
+        font-weight: 300;
+    }
+    &__button{
+        margin-top: 25px;
+        margin-bottom: 50px;
+    }
+
+}
+
+/* 3 blocs étape à suivre */
+
+.step{
+    margin-top: 40px;
+    &__title{
+        font-size: 24px;
+        font-weight: bold;
+        margin-left: 20px;
+    }
+    &__cards{
+        display: flex;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    &__card{
+        height: 80px;
+        margin-top: 30px;
+        border-radius: 28px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: $grey-color;
+        box-shadow: 0 0 16px #0000002e;
+        margin-left: auto;
+        margin-right: auto;
+        &:hover{
+            background-color: #f5edff;
+            box-shadow: 0 0 25px #0000002e;
+            i{
+                color: #9356dc
+            }
+            
+        }
+
+        & .step__number{
+            border-radius: 100%;
+            background-color: #9356dc;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: -10px;
+                color: white;
+                font-weight: 300;
+                font-size: 15px;
+        }
+        & i{
+            font-size: 18px;
+            margin-left: 25px;
+            color: gray;
+        }
+        & .step__desc{
+            font-size: 18px;
+            font-weight: 500;
+            margin-left: 20px;
+        }
+    }
+}
+
+
+/************************************
+        --- SECTION - BLOC DES RESTAURANT ---              
+************************************/
+
+.restaurant{
+    margin-top: 60px;
+    background-color: $grey-color;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    & .restaurant__title{
+        font-size: 24px;
+        font-weight: bold;
+        margin-left: 20px;
+        margin-top: 50px;
+        margin-bottom: 6px;
+    }
+
+}
+
+.restaurant__card{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    background-color: white;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 16px #0000002e;
+    margin-top: 15px;
+    margin-bottom: 30px;
+
+    & .card_image{
+        display: flex;
+        justify-content: end;
+    }
+
+    & img{
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+    }
+    & .btn-new{
+        position: absolute;
+        padding: 7px;
+        margin: 12px;
+        border-radius: 5px;
+        background-color: $thirty-color;
+        font-size: 13px;
+        color: rgba(0, 0, 0, 0.6);
+        font-weight: 500;
+    }
+    
+    & .card__flex{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+        & .card__text{
+            margin: 15px;
+        }
+
+        & .card__title{
+            font-size: 18px;
+            font-weight: bold;
+        }
+        & .card__loc{
+            font-size: 16px;
+            margin-top: 3px;
+        }
+
+        & .card__like{
+            margin-right: 20px;
+            width: 40px;
+            height: 30px;
+
+            & i{
+                position: absolute;
+                font-size: 25px;
+                transition-duration: 0.4s;
+
+                &:hover{
+                    opacity: 1;
+                    transition-duration: 0.6s;
+                    background: linear-gradient(180deg, #9356DC 0%, #FF79DA 100%);
+                    background-clip: text;
+                        -webkit-background-clip: text; /* PRENDS LA FORME DU COEUR */
+                    color: transparent;/*POUR QUE LE BACKGROUND S'AFFICHE SUR LE TEXTE ON REND LE TEXTE TRANSPARENT*/
+                    transform: scale(1.1)
+                }
+            }
+            & .fa{
+                opacity: 0;
+            }
+        }
+
+
+
+    }
+}
+
+
+/* DESKTOP */
+
+@media screen and (min-width: 1024px) {
+    br{
+        display:none;
+    }
+
+    .step{
+        &__card{
+            width: 31%;
+        }
+    }
+
+    .restaurant_cards{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .restaurant__card{
+        width: 90%;
+    }
+}
+
+
+/* TABLETTE */
+
+@media screen and (max-width: 1023px) {
+
+    .step{
+        
+        &__cards{
+        flex-direction: row;
+        }
+        &__card{
+            width: 30%;
+        }
+    }
+
+    .restaurant_cards{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .restaurant__card{
+        width: 90%;
+    }
+}
+
+/* SMARTPHONE */
+
+@media screen and (max-width: 768px){
+
+    .step{
+        &__cards{
+            flex-direction: column;
+        }
+        &__card{
+            width: 100%;
+        }
+    }
+
+    .restaurant_cards{
+        display: flex;
+        flex-direction: column;
+    }
+    .restaurant__card{
+        width: 90%;
+    }
+}
