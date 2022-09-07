@@ -1,0 +1,295 @@
+/************************************
+        --- PAGE MENU 1 ---  SI PRB = ABSOLUTE DU .MENU            
+************************************/
+
+header{
+    display: flex;
+    align-items: center;
+
+    & a{
+        position: absolute;
+        font-size: 18px;
+        margin-left: 5%;
+    }
+
+}
+
+.photo{
+    width: auto;
+    height: 250px;
+    & img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+}
+
+.menu{ 
+    position: relative;
+    margin-top: -70px; /* chevauchement */
+    width: 100%;
+    height: auto;
+    border-radius: 40px 40px 0 0;
+    background-color: $grey-color;
+    
+
+    &__info{
+        margin: 20px 20px 0 15px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        
+        & .name{
+            font-family: Shrikhand, "arial";
+            font-weight: 400;
+            margin-top: 30px;
+        }
+
+        & i{
+            position: absolute;
+
+            &:hover{
+                opacity: 1;
+                transition-duration: 0.6s;
+                background: linear-gradient(180deg, #9356DC 0%, #FF79DA 100%);
+                background-clip: text;
+                    -webkit-background-clip: text; /* PRENDS LA FORME DU COEUR */
+                color: transparent;/*POUR QUE LE BACKGROUND S'AFFICHE SUR LE TEXTE ON REND LE TEXTE TRANSPARENT*/
+                transform: scale(1.1)
+            }
+        }
+        & .fa{
+            opacity: 0;
+        }
+
+        /*& .like{
+            font-size: 25px;
+            margin-top: 30px;
+            margin-left: 40px;
+        }    */
+
+    }
+
+    &__bloc{
+        margin: 0 0 0 15px;
+
+
+        & .categorie{
+            font-size: 17px;
+            font-weight: 300;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            margin-top: 30px;
+            width: 45px;
+            height: 25px;
+            border-bottom: 4px $thirty-color solid; /* IDEM */
+            animation: slideup 0.8s forwards;
+        }
+
+        & .card{
+            background-color: white;
+            border-radius: 18px;
+            height: auto;
+            display: flex;
+            margin-top: 15px;
+            box-shadow: 0 0 8px #0000002e;
+	        overflow: hidden; /* cacher le check vert */
+            animation: slideup 1s forwards;
+            opacity: 0;  
+            margin-right: 15px;  
+            justify-content: space-between;
+            
+            & .inside{
+                display: flex;
+                width: 100%;
+                max-width: 100%;
+                overflow: hidden; /* pour permettre de passer sur le texte quand hover */
+                justify-content: space-between;
+            }
+
+
+            & .text{
+                margin: 14px 8px 14px 16px;
+                overflow: hidden; /* idem */
+
+                & .title{
+                    font-size: 17px;
+                    font-weight: bold;
+                    
+                    width: 100%;
+                    max-width: 100%;
+                    overflow: hidden; /* idem */
+                    white-space: nowrap; /* texte sur la même ligne */
+                    text-overflow: ellipsis; 
+                }
+
+                & .subtitle{
+                    font-size: 14px;
+                    overflow: hidden; /* idem */
+                    white-space: nowrap; /* texte sur la même ligne */
+                    text-overflow: ellipsis; 
+                }
+
+            }
+            & .price{
+                display: flex;
+                align-items: flex-end;
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 14px;
+                margin-right: 12px;
+            }
+
+            & .icone {
+                width: 64px;
+                background: #99e2d0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: -80px;
+                transition-duration: 0.8s;
+                transition-timing-function: ease; 
+            }
+            
+            & .icone > i {
+                color: #99e2d0;
+                padding: 4px;
+                border-radius: 50%;
+                background: white;
+            }
+
+            &:hover .icone {
+                margin-right: 0;
+                transition-duration: 0.8s;
+                transition-timing-function: ease;
+            }
+            &:hover i {
+                transform: rotate(360deg);
+                transition-duration: 0.8s;
+            } 
+
+
+        }
+    }
+    &__button{
+        display: flex;
+        justify-content: center;
+        margin: 50px 0 0px 0; 
+        height: 100px;
+    }
+}
+
+/* arriver des cards une par une en décalage */
+
+.categorie:nth-child(2) {
+    animation-delay: calc(2s / 10);
+}
+.categorie:nth-child(3) {
+    animation-delay: calc(2s / 10);
+}
+.categorie:nth-child(4) {
+    animation-delay: calc(2s / 10);
+}
+.card:nth-child(2) {
+    animation-delay: calc(2s / 10);
+}
+.card:nth-child(3) {
+    animation-delay: calc(3s / 10);
+}
+.card:nth-child(4) {
+    animation-delay: calc(4s / 10);
+}
+.card:nth-child(5) {
+    animation-delay: calc(5s / 10);
+}
+
+@keyframes slideup {
+    from {
+      transform: translatey(19px); /* arriver des blocs cards 18px vers le bas (y) */
+      opacity: 0%;
+    }
+    to {
+      transform: translatey(0px); /* mise en place des blocs cards */
+      opacity: 100%;
+    }
+}
+
+/* DESKTOP */
+
+@media screen and (min-width: 1024px) {
+
+    .menu{
+        &__info{
+            justify-content: center;
+            & .name{
+                font-size: 40px;
+            }
+            & i{
+                font-size: 25px;
+                margin-top: 27px;
+                margin-left: 450px;
+            }
+        }
+        &__bloc{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+}
+
+/* TABLETTE */
+
+@media screen and (max-width: 1023px) {
+
+    .menu{
+        &__info{
+            justify-content: center;
+            & .name{
+                font-size: 40px;
+            }
+            & i{
+                font-size: 25px;
+                margin-top: 27px;
+                margin-left: 450px;
+            }
+        }
+        &__bloc{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            & .card{
+                width: 95%;
+            }
+        }
+    }
+}
+
+/* SMARTPHONE */
+
+@media screen and (max-width: 768px){
+
+    .menu{
+        &__info{
+            justify-content: left;
+            & .name{
+                font-size: 26px;
+            }
+            & i{
+                font-size: 22px;
+                transition-duration: 0.4s;
+                margin-top: 27px;
+                margin-left: 250px;
+                margin-right: 150px;
+            }
+        }  
+        &__bloc{
+            display: flex;
+            flex-direction: column;
+        }
+        &__card{
+            width: 100%;
+        }
+    }
+}
