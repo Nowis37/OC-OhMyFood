@@ -61,7 +61,7 @@ footer .footer__flex .logofooter {
 }
 footer .footer__flex .logofont {
   margin: 15px 0 8px 0;
-  font-family: Shrikhand, "arial";
+  font-family: "Shrikhand", "arial";
   font-size: 17px;
 }
 footer .footer__flex .line {
@@ -451,7 +451,7 @@ header a {
   }    */
 }
 .menu__info .name {
-  font-family: Shrikhand, "arial";
+  font-family: "Shrikhand", "arial";
   font-weight: 400;
   margin-top: 30px;
 }
