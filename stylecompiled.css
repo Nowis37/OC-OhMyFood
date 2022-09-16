@@ -69,6 +69,7 @@ footer .footer__flex .line {
   font-size: 14px;
 }
 footer .footer__flex .line i {
+  width: 15px;
   margin-right: 7px;
 }
 footer .footer__flex a {
@@ -179,12 +180,22 @@ header .logo img {
   justify-content: center;
   align-items: center;
 }
+.loc .loc-search {
+  background-color: #eaeaea;
+  width: auto;
+  height: 40px;
+  border: none;
+  color: #353535;
+  font-size: 15px;
+  font-weight: 500;
+}
 .loc p {
   color: #353535;
   font-size: 15px;
   font-weight: 500;
 }
 .loc .loc-icon {
+  padding-left: 70px;
   margin-right: 11px;
 }
 
@@ -440,15 +451,11 @@ header a {
   background-color: #f6f6f6;
 }
 .menu__info {
+  position: relative;
   margin: 20px 20px 0 15px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  /*& .like{
-      font-size: 25px;
-      margin-top: 30px;
-      margin-left: 40px;
-  }    */
 }
 .menu__info .name {
   font-family: "Shrikhand", "arial";
@@ -644,17 +651,17 @@ header a {
 /* SMARTPHONE */
 @media screen and (max-width: 768px) {
   .menu__info {
-    justify-content: left;
+    justify-content: space-between;
   }
   .menu__info .name {
     font-size: 26px;
   }
   .menu__info i {
+    left: 95%;
+    margin: 0;
     font-size: 22px;
     transition-duration: 0.4s;
     margin-top: 27px;
-    margin-left: 250px;
-    margin-right: 150px;
   }
   .menu__bloc {
     display: flex;

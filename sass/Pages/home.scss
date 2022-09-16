@@ -21,12 +21,22 @@ $grey-color: #f6f6f6;
     display: flex;
     justify-content: center;
     align-items: center;
+    & .loc-search{
+        background-color: #eaeaea;
+        width: auto;
+        height: 40px;
+        border: none;
+        color: #353535;
+        font-size: 15px;
+        font-weight: 500;
+    }
     & p{
         color: #353535;
         font-size: 15px;
         font-weight: 500;
     }
     & .loc-icon{
+        padding-left: 70px;
         margin-right: 11px;
     }
 }
